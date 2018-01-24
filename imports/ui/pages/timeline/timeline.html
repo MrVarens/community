@@ -1,0 +1,8 @@
+<template name="Pages_Timeline">
+    <h4>Messages of following users</h4>
+    <div class="divider"></div>
+
+    {{#each messages}}
+        {{> Components_Post this}}
+    {{/each}}
+</template>

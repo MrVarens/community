@@ -1,0 +1,22 @@
+<template name="Pages_Home">
+    <div class="panel panel-default">
+        <div class="panel-heading">Post message</div>
+        <div class="panel-body">
+            {{> quickForm
+                id="autoform-post-message"
+                doc=data
+                schema=form
+                type="method"
+                meteormethod="message.post"
+                buttonContent="Send"
+            }}
+        </div>
+    </div>
+
+    <h4>Your messages</h4>
+    <div class="divider"></div>
+
+    {{#each messages}}
+        {{> Components_Post this}}
+    {{/each}}
+</template>

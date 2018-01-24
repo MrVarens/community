@@ -1,0 +1,27 @@
+<template name="Pages_Following">
+    <div class="panel panel-default">
+        <div class="panel-heading">Follow</div>
+        <div class="panel-body">
+            {{> quickForm
+                id="autoform-follow"
+                doc=data
+                schema=form
+                type="method"
+                meteormethod="follow.add"
+                buttonContent="Send"
+            }}
+        </div>
+    </div>
+
+    <h4>Users you follow</h4>
+    <div class="divider"></div>
+
+    {{#each following}}
+        <div class="panel panel-default follow">
+            <div class="panel-heading">
+                <b>{{username}}</b>
+                <div class="date">{{timer createdAt}}</div>
+            </div>
+        </div>
+    {{/each}}
+</template>
